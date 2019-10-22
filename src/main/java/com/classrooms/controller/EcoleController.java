@@ -24,7 +24,6 @@ import com.classrooms.model.Role;
 import com.classrooms.model.UserApp;
 import com.classrooms.service.EcoleService;
 import com.classrooms.service.UserService;
-//@CrossOrigin("http://localhost:4200")
 @RestController
 public class EcoleController {
 
@@ -153,18 +152,8 @@ public class EcoleController {
 	
 	@PostMapping(value = "/create")
 	public void createUser(@RequestBody UserApp userApp) {	
-	//UserApp user = new UserApp("salim", "salim", 25);
-		System.out.println("create UserApp : "+userApp);
-		System.out.println("create UserApp : "+userApp.getUsername());
-		System.out.println("create UserApp : "+userApp.getPassword());
-		System.out.println("create UserApp : "+userApp.getRoles());
-//		Role r1 = new Role("admin");
-//		Role r2 = new Role("user");
-//		userApp.getRoles().add(r1);
-//		userApp.getRoles().add(r2);
 		userService.save(userApp);
-
-	}
+		}
 
 	// call other microserviuce started on port 9095
 //	@GetMapping(value = "/Produits/{id}")
